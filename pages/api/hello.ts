@@ -1,13 +1,38 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-type Data = {
-  name: string
-}
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<any>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  if (!req.body.ingredients) return;
+  console.log(req.body);
+  const ingredients = req.body.ingredients.map((ingredient:any)=>ingredient);
+  console.log(ingredients);
+  const { Configuration, OpenAIApi } = require("openai");
+  const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+  const openai = new OpenAIApi(configuration);
+  const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: `generate recipe with this ingredients:${ingredients} in this exact format:
+  {
+    "name":"recipe name",
+    "ingredients":["ingredient1","ingredient2",...],
+    "instructions":["instruction1","instruction2",...]
+  }`,
+  temperature: 1,
+  max_tokens: 2048,
+});
+  console.log('server',response.data.choices[0].text)
+  try{
+    // const recipe = JSON.parse('d');
+    const recipe = JSON.parse(response.data.choices[0].text);
+    res.status(200).json(recipe);
+  }catch(err){
+    res.status(400).json({error:'Something went wrong.. Please try again.'})
+  }
+  
 }
