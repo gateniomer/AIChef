@@ -47,11 +47,14 @@
 }
 
 .container input {
+  /* display: block; */
   background: none;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   margin: 0px 5px;
-  /* width: 100%; */
+  font-style: italic;
+  font-size: 1.5rem;
+  width: 200px;
 }
 .container input:focus {
   outline: none;
