@@ -6,7 +6,7 @@ export const NavMenu = () => {
     <ul>
       <li><Link href={'/favorites'}>Favorites</Link></li>
       <li><Link href={'/history'}>History</Link></li>
-      <li>About</li>
+      <li><Link href={'/about'}>About</Link></li>
     </ul>
   </nav>)
 }
