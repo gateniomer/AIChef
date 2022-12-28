@@ -12,4 +12,5 @@ const withPWA = require('next-pwa')({
 
 module.exports = withPWA({
   // config
+  basePath: '/AIChef',
 })
