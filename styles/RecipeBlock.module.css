@@ -1,7 +1,7 @@
 .recipeContainer {
   background: #333;
-  max-width: 90%;
   width: 500px;
+  max-width: 100%;
   padding: 20px;
   margin: 20px auto;
   border-radius: 20px;
@@ -43,4 +43,16 @@
   border-radius: 10px;
   font-size: 1.2rem;
   margin-bottom: 10px;
+}
+
+.recipeThumbnail {
+  background: #333;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.recipeThumbnail:hover {
+  transform: scale(1.03);
+  transition: 0.1s all;
 }

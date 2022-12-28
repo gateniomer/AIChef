@@ -3,5 +3,6 @@ export type Recipe = {
   name:string,
   description:string,
   ingredients:string[],
-  instructions:string[]
+  instructions:string[],
+  favorite:boolean
 }

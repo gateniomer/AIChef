@@ -1,8 +1,9 @@
 import { useRouter } from "next/router"
 import { useState,useEffect } from "react";
-import RecipeBlock from "../../components/RecipeBlock";
-import { findRecipeInLocalStorage } from "../../utils/localstorage";
+import RecipeBlock from "../../components/Recipe";
+import { getRecipeFromLocalStorage } from "../../utils/localstorage";
 import { Recipe } from "../../utils/types";
+
 
 export default function RecipePage(){
   const router = useRouter();
@@ -11,7 +12,7 @@ export default function RecipePage(){
 
   useEffect(()=>{
     if(typeof id != 'string') return;
-    const recipe = findRecipeInLocalStorage(parseInt(id));
+    const recipe = getRecipeFromLocalStorage(parseInt(id));
     setRecipe(recipe);
   },[id])
 

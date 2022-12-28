@@ -3,15 +3,3 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
-
-.recipeThumbnail {
-  background: #333;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.recipeThumbnail:hover {
-  transform: scale(1.03);
-  transition: 0.1s all;
-}

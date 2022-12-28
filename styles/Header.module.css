@@ -8,19 +8,45 @@
 }
 
 .menuDesktop ul {
-  list-style: none;
   display: flex;
   gap: 20px;
 }
-.menuMobile {
+.menuMobileIcon {
   display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.menuMobile {
+  font-size: 1.5rem;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #333;
+  height: 100vh;
+  width: 200px;
+  transform: translateX(100%);
+  transition: all 0.5s;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.menuMobile ul {
+  padding: 0;
+}
+.menuMobile ul li {
+  margin-bottom: 10px;
+}
+
+.show {
+  transition: all 0.5s;
+  transform: translateX(0%);
 }
 
 @media (max-width: 600px) {
   .menuDesktop {
     display: none;
   }
-  .menuMobile {
+  .menuMobileIcon {
     display: block;
   }
 }
