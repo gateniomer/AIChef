@@ -2,6 +2,7 @@
   "name": "AIChef - Generated Recipes",
   "short_name": "AIChef",
   "theme_color": "#ffffff",
+  "homepage": "https://gateniomer.github.io/AIChef/",
   "background_color": "#004740",
   "display": "fullscreen",
   "orientation": "portrait",
