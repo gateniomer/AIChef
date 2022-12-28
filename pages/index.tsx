@@ -8,6 +8,7 @@ import RecipeBlock from '../components/Recipe';
 import { Recipe } from '../utils/types';
 import { addRecipeToLocalStorage, getRecipesFromLocalStorage } from '../utils/localstorage';
 import { v4 as uuidv4 } from 'uuid';
+import { useRouter } from 'next/router';
 
 type Ingredient = {
   id:number,
@@ -19,12 +20,14 @@ export default function Home() {
   const [data,setData] = useState<Recipe|null>(null);
   const [pending,setPending] = useState(false);
   const [error,setError] = useState('');
+  const router = useRouter();
 
   useEffect(()=>{
     if(!data) return;
     data.id = uuidv4();
     data.favorite = false;
     addRecipeToLocalStorage(data);
+    router.push('/recipe/'+data.id);
   },[data]);
 
   const fetchData = async (recipe:string,ingredients:string[]) =>{
@@ -55,10 +58,8 @@ export default function Home() {
   return (
     <div className={styles.container} id='test'>
         {error && <span>{error}</span>}
-        <IngredientsPicker callback={fetchData} className={pending?'shrink':''}/>
+        <IngredientsPicker callback={fetchData} className=      {pending?'shrink':''}/>
         {pending && <Loading/>}
-
-        {data && !pending &&  <RecipeBlock recipe={data}/>}
         
         
     </div>

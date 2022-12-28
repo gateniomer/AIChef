@@ -26,7 +26,13 @@ export const getRecipeFromLocalStorage = (id:string):Recipe|undefined =>{
   return recipes.find(recipe=>recipe.id===id);
 }
 
-export const setFavoriteRecipeInLocalStorage = (id:number):boolean=>{
+export const deleteRecipeFromLocalStorage = (id:string) =>{
+  const recipes = getRecipesFromLocalStorage();
+  const updatedRecipes = recipes.filter(recipe=>recipe.id!=id);
+  localStorage.setItem('history',JSON.stringify(updatedRecipes));
+}
+
+export const setFavoriteRecipeInLocalStorage = (id:string):boolean=>{
   const recipe = getRecipeFromLocalStorage(id);
   if(!recipe) return false;
   recipe.favorite = !recipe.favorite;

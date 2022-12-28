@@ -1,11 +1,12 @@
 import { faHeart, faShare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from '../styles/RecipeBlock.module.css';
+import styles from '../styles/Recipe.module.css';
 import { Recipe } from '../utils/types';
 import { faHeart as faEmptyHeart } from '@fortawesome/free-regular-svg-icons';
-import { setFavoriteRecipeInLocalStorage } from '../utils/localstorage';
+import { deleteRecipeFromLocalStorage, setFavoriteRecipeInLocalStorage } from '../utils/localstorage';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 type Props = {
   recipe:Recipe
@@ -44,6 +45,7 @@ export const RecipeThumbnail = ({recipe}:{recipe:Recipe}) => {
 
 export const RecipeBar = ({recipe}:{recipe:Recipe}) => {
   const [favorite,setFavorite] = useState(recipe.favorite);
+  const router = useRouter();
   return (
     <div style={{
       display:'flex',
@@ -63,7 +65,10 @@ export const RecipeBar = ({recipe}:{recipe:Recipe}) => {
         setFavorite(favorite);
       }}/>}
       <FontAwesomeIcon icon={faShare}/>
-      <FontAwesomeIcon icon={faTrash}/>
+      <FontAwesomeIcon icon={faTrash} onClick={()=>{
+        deleteRecipeFromLocalStorage(recipe.id);
+        router.reload();
+      }}/>
     </div>)
 }
 
