@@ -20,7 +20,7 @@ export default function Home() {
   const [pending,setPending] = useState(false);
   const [error,setError] = useState('');
   const router = useRouter();
-
+  
   useEffect(()=>{
     if(!data) return;
     data.id = uuidv4();
@@ -32,18 +32,24 @@ export default function Home() {
   const fetchData = async (recipe:string,ingredients:string[]) =>{
     setError('');
     setPending(true);
-    const response = await fetch('api/recipe',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({recipe,ingredients})
-    });
-    const data = await response.json();
-    setPending(false);
-    if(data.error) return setError(data.error);
-    setData(data);
-    return data;
+    try{
+      const response = await fetch('api/recipe',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body: JSON.stringify({recipe,ingredients})
+      });
+      const data = await response.json();
+      setPending(false);
+      setData(data);
+      return data;
+    }catch(error){
+      setPending(false);
+      setError('Something went wrong.. Please try again.');
+      console.log(error);
+    }
+    
   }
   // const saveImage = async () =>{
   //   const div:HTMLElement|null = document.querySelector("#recipe");
