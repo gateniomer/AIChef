@@ -22,7 +22,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="Keywords" />
         <title>AIChef - Generated Recipes</title>
 
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="manifest.json" />
         <link
           href="/icons/favicon-16x16.png"
           rel="icon"
