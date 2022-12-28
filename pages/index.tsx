@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <div className={styles.container + ' page-container'}>
-        {error && <span>{error}</span>}
+        {error && <span className='alert'>{error}</span>}
         <IngredientsPicker callback={fetchData} pending={pending}/>
         
         

@@ -6,10 +6,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
+
   if (!req.body.recipe && !req.body.ingredients) return;
+  
   const recipe = req.body.recipe;
   const ingredients = req.body.ingredients.map((ingredient:any)=>ingredient);
-  console.log(ingredients);
   const { Configuration, OpenAIApi } = require("openai");
   const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -29,7 +30,6 @@ export default async function handler(
 });
   console.log('server',response.data.choices[0].text)
   try{
-    // const recipe = JSON.parse('d');
     const recipe = JSON.parse(response.data.choices[0].text);
     res.status(200).json(recipe);
   }catch(err){
