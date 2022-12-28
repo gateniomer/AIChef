@@ -14,6 +14,6 @@ const withPWA = require('next-pwa')({
 
 module.exports = withPWA({
   // config
-  basePath: isProd ? '/AIChef':undefined,
-  assetPrefix: isProd ? 'https://gateniomer.github.io/AIChef/' : undefined,
+  // basePath: isProd ? '/AIChef':undefined,
+  // assetPrefix: isProd ? 'https://gateniomer.github.io/AIChef/' : undefined,
 })
