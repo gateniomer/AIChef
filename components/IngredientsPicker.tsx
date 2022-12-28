@@ -3,11 +3,13 @@ import styles from '../styles/IngredientsPicker.module.css';
 
 type Props = {
   callback: (recipe:string,ingredients:string[])=>Promise<any>,
-  className?:string
+  className?:string,
+  pending:boolean
 }
 export const IngredientsPicker = ({
   callback,
-  className}:Props) => {
+  className,
+  pending}:Props) => {
   const [input1,setInput1] = useState('');
   const [input2,setInput2] = useState('');
   const [ingredients,setIngredients] = useState<string[]>([]);
@@ -26,7 +28,7 @@ export const IngredientsPicker = ({
     <p>I wish for{recipe && <span onClick={()=>setRecipe('')}>{recipe}</span>}
     {!recipe && 
     <input 
-    placeholder="random"
+    placeholder="cake,smoothie, ..."
     value={input1} 
     onChange={(e)=>setInput1(e.target.value)} 
     onKeyDown={(e)=>e.key==='Enter'&& addRecipe()}/>} 
@@ -44,7 +46,10 @@ export const IngredientsPicker = ({
     onKeyDown={(e)=>e.key==='Enter'&& addIngredient()}/>
     </p>
     
-    <button onClick={()=>callback(recipe,ingredients)}>Generate Recipe</button>
+    <button 
+    onClick={()=>callback(recipe,ingredients)}
+    disabled={pending}
+    >{pending?'Loading...' : 'Generate Recipe'}</button>
   </div>)
 }
 

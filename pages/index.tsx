@@ -33,7 +33,7 @@ export default function Home() {
   const fetchData = async (recipe:string,ingredients:string[]) =>{
     setError('');
     setPending(true);
-    const response = await fetch('api/hello',{
+    const response = await fetch('api/recipe',{
       method:'POST',
       headers:{
         'Content-Type':'application/json'
@@ -56,10 +56,9 @@ export default function Home() {
 
 
   return (
-    <div className={styles.container} id='test'>
+    <div className={styles.container + ' page-container'}>
         {error && <span>{error}</span>}
-        <IngredientsPicker callback={fetchData} className=      {pending?'shrink':''}/>
-        {pending && <Loading/>}
+        <IngredientsPicker callback={fetchData} pending={pending}/>
         
         
     </div>

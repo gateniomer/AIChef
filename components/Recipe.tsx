@@ -22,11 +22,11 @@ export const RecipeBlock = ({recipe}:Props) => {
   </p>
   <h3>Ingredients</h3>
   <div className={styles.ingredientsContainer}>
-    {recipe.ingredients.map((ingredient:any)=><span>{ingredient} </span>)}
+    {recipe.ingredients.map((ingredient:any)=><span key={ingredient}>{ingredient} </span>)}
   </div>
   <h3>Instructions</h3>
   <div className={styles.instructionsContainer}>
-    {recipe.instructions.map((instruction:any,index:number)=><div><span>Step {index+1}</span><p>{instruction}</p></div>)}
+    {recipe.instructions.map((instruction:any,index:number)=><div key={index}><span>Step {index+1}</span><p>{instruction}</p></div>)}
   </div>
 </div>)
 }
@@ -47,12 +47,7 @@ export const RecipeBar = ({recipe}:{recipe:Recipe}) => {
   const [favorite,setFavorite] = useState(recipe.favorite);
   const router = useRouter();
   return (
-    <div style={{
-      display:'flex',
-      gap:'20px',
-      justifyContent:'flex-end',
-      fontSize:'1.6rem'
-    }}>
+    <div className={styles.recipeBar}>
       {favorite ? 
       <FontAwesomeIcon icon={faHeart}
       onClick={()=>{

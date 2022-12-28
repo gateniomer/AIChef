@@ -13,6 +13,7 @@ export default function RecipePage(){
   useEffect(()=>{
     if(typeof id != 'string') return;
     const recipe = getRecipeFromLocalStorage(id);
+    if(!recipe) router.push('/');
     setRecipe(recipe);
   },[id])
 

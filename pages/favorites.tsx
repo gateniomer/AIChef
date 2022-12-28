@@ -15,7 +15,7 @@ export default function Favorites(){
   return (<div className='page-container'>
     <h2>Favorite</h2>
     <div className='recipe-container'>
-      {recipes.map(recipe=><RecipeThumbnail recipe={recipe}/>)}
+      {recipes.map(recipe=><RecipeThumbnail key={recipe.id} recipe={recipe}/>)}
     </div>
   </div>)
 }

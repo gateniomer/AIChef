@@ -9,12 +9,12 @@
   transition: 0.5s all ease-in-out;
   overflow: hidden;
   max-height: 500px;
-  background: #333;
+  background: var(--main-color);
   border-radius: 10px;
 }
 
 .container span {
-  background: #555;
+  background: var(--buttons);
   padding: 0.1rem 0.5rem;
   border-radius: 20px;
   margin: 0px 0.3rem;
@@ -61,7 +61,7 @@
 }
 
 .container button {
-  background: #555;
+  background: var(--buttons);
   border: none;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;

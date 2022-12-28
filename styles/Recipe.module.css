@@ -1,5 +1,5 @@
 .recipeContainer {
-  background: #333;
+  background: var(--main-color);
   width: 500px;
   max-width: 100%;
   padding: 20px;
@@ -9,6 +9,7 @@
 
 .recipeContainer h2 {
   font-size: 2rem;
+  font-weight: black;
 }
 
 .ingredientsContainer {
@@ -17,7 +18,7 @@
   gap: 5px;
 }
 .ingredientsContainer span {
-  background: #555;
+  background: var(--buttons);
   padding: 4px 10px;
   border-radius: 20px;
 }
@@ -25,34 +26,46 @@
 .instructionsContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-size: 1.1rem;
   overflow-y: scroll;
   max-height: 400px;
   padding: 10px;
 }
 .instructionsContainer div {
-  background: #777;
-  padding: 2px;
+  padding: 10px;
   border-radius: 10px;
 }
 .instructionsContainer div span {
   display: block;
-  background: #2e2e2e;
-  padding: 10px;
-  border-radius: 10px;
+  background: var(--buttons);
+  padding: 5px;
+  border-radius: 5px;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
 
 .recipeThumbnail {
-  background: #333;
+  background: var(--main-color);
   font-size: 1rem;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
+.recipeThumbnail h3 {
+  font-size: 1.3rem;
+}
 .recipeThumbnail:hover {
   transform: scale(1.03);
   transition: 0.1s all;
+}
+
+.recipeBar {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+}
+.recipeBar svg {
+  cursor: pointer;
 }
