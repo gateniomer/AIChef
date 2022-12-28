@@ -18,7 +18,7 @@ I created this project using some of the knowledge I gained in:
 
 I hope you enjoyed reading about this project, thank you for your time 😁
 
-Live site: https://gateniomer.github.io/AIChef/
+Live site: https://ai-chef.vercel.app/
 
 Github repo: https://github.com/gateniomer/AIChef
 
