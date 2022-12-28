@@ -1,4 +1,3 @@
-import styles from '../styles/HistoryPage.module.css';
 import { Recipe } from '../utils/types';
 import { useEffect, useState } from 'react';
 import { getRecipesFromLocalStorage } from '../utils/localstorage';

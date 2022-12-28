@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Head from 'next/head'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import Footer from '../components/Footer'
 config.autoAddCss = false;
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -24,5 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
     margin:'0 auto'}}>
     <Component {...pageProps} />
   </div>
+  <Footer/>
   </>
 }
