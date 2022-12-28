@@ -18,7 +18,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <meta name='og:url' content='https://gateniomer.github.io/chefai/'/>
     </Head>
   <Header/>
-  <div style={{maxWidth:'90%',margin:'0 auto'}}>
+  <div style={{
+    width:'1400px',
+    maxWidth:'90%',
+    margin:'0 auto'}}>
     <Component {...pageProps} />
   </div>
   </>

@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap");
 html,
 body {
+  background: #121212;
+  color: white;
   padding: 0;
   margin: 0;
   font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -15,20 +17,29 @@ a {
 
 * {
   box-sizing: border-box;
+  color: white;
 }
 
 h1 {
   text-align: center;
   font-size: 3rem;
 }
+.page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .shrink {
   max-height: 0px !important;
 }
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
+
+.recipe-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 800px) {
+  .recipe-container {
+    grid-template-columns: 1fr 1fr;
   }
 }

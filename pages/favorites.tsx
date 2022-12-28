@@ -14,9 +14,9 @@ export default function Favorites(){
     filtered && setRecipes(filtered);
   },[])
 
-  return (<div>
+  return (<div className='page-container'>
     <h2>Favorite</h2>
-    <div className={styles.recipeContainer}>
+    <div className='recipe-container'>
       {recipes.map(recipe=><RecipeThumbnail recipe={recipe}/>)}
     </div>
   </div>)

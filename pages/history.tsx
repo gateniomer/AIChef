@@ -12,9 +12,9 @@ export default function History(){
     recipes && setRecipes(recipes);
   },[])
   
-  return (<div>
+  return (<div className='page-container'>
     <h2>History</h2>
-    <div className={styles.recipeContainer}>
+    <div className='recipe-container'>
       {recipes.map(recipe=><RecipeThumbnail recipe={recipe}/>)}
     </div>
   </div>)
