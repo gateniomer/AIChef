@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
   
 env: 
-  {'OPENAI_API_KEY':'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'}
+  {'OPENAI_API_KEY':'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'}
   
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
