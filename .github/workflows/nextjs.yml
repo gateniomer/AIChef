@@ -11,10 +11,9 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
-env: 
-  {'OPENAI_API_KEY':'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'}
-  
+
+env: { "OPENAI_API_KEY": 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 }
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
