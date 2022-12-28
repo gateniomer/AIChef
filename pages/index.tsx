@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import { useState,useEffect } from 'react'
 import html2canvas from 'html2canvas';
 import IngredientsPicker from '../components/IngredientsPicker';
-import Loading from '../components/Loading';
 import RecipeBlock from '../components/Recipe';
 import { Recipe } from '../utils/types';
 import { addRecipeToLocalStorage, getRecipesFromLocalStorage } from '../utils/localstorage';

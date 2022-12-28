@@ -1,30 +1,51 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import Header from '../components/Header'
 import Head from 'next/head'
+import '../styles/globals.css'
+import { AppProps } from 'next/app'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import '../styles/globals.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import Footer from '../components/Footer'
 config.autoAddCss = false;
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <>
-  <Head>
-    <title>AIChef</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name = "author" content = "Omer Gatenio" />
-    <meta name='og:title' content='AIChef'/>
-    <meta name='og:description' content='ChefAI'/>
-    <meta name='og:url' content='https://gateniomer.github.io/chefai/'/>
-    </Head>
-  <Header/>
-  <div style={{
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="AIChef is a platform for discovering new and innovative recipes created using artificial intelligence." />
+        <meta name="keywords" content="Keywords" />
+        <title>AIChef - Generated Recipes</title>
+
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          href="/icons/favicon-16x16.png"
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+        />
+        <link
+          href="/icons/favicon-32x32.png"
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link rel="apple-touch-icon" href="/apple-icon.png"></link>
+        <meta name="theme-color" content="#317EFB" />
+      </Head>
+      <Header/>
+      <div style={{
     width:'1400px',
     maxWidth:'90%',
     margin:'0 auto'}}>
     <Component {...pageProps} />
   </div>
   <Footer/>
-  </>
+    </>
+  )
 }
