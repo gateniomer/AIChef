@@ -12,7 +12,7 @@ export default function RecipePage(){
 
   useEffect(()=>{
     if(typeof id != 'string') return;
-    const recipe = getRecipeFromLocalStorage(parseInt(id));
+    const recipe = getRecipeFromLocalStorage(id);
     setRecipe(recipe);
   },[id])
 

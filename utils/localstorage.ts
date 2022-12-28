@@ -21,7 +21,7 @@ export const addRecipeToLocalStorage = (recipe:Recipe):Recipe[] =>{
   return updatedRecipes;
 }
 
-export const getRecipeFromLocalStorage = (id:number):Recipe|undefined =>{
+export const getRecipeFromLocalStorage = (id:string):Recipe|undefined =>{
   const recipes = getRecipesFromLocalStorage();
   return recipes.find(recipe=>recipe.id===id);
 }

@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import RecipeBlock from '../components/Recipe';
 import { Recipe } from '../utils/types';
 import { addRecipeToLocalStorage, getRecipesFromLocalStorage } from '../utils/localstorage';
+import { v4 as uuidv4 } from 'uuid';
 
 type Ingredient = {
   id:number,
@@ -21,8 +22,7 @@ export default function Home() {
 
   useEffect(()=>{
     if(!data) return;
-    const recipes = getRecipesFromLocalStorage();
-    data.id = recipes.length;
+    data.id = uuidv4();
     data.favorite = false;
     addRecipeToLocalStorage(data);
   },[data]);
