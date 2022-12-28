@@ -1,7 +1,5 @@
-import styles from '../styles/HistoryPage.module.css';
 import { Recipe } from '../utils/types';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { getRecipesFromLocalStorage } from '../utils/localstorage';
 import { RecipeThumbnail } from '../components/Recipe';
 
