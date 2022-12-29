@@ -64,7 +64,11 @@ export default function Home() {
     <div className={styles.container + ' page-container'}>
         {error && <span className='alert'>{error}</span>}
         <IngredientsPicker callback={fetchData} pending={pending}/>
-        
+
+        <div className='more-details-container'>
+        <p>This mini project was developed by Omer Gatenio as part of a journey to become a full-stack developer.</p>
+        <p>I'm looking for a Frontend/Fullstack position, <a href="https://www.linkedin.com/posts/omer-gatenio_acraclacsacgabracsacpacpadd-frontend-fullstack-activity-7011254902555348993-Vjsq?utm_source=share&utm_medium=member_desktop">click here</a> for more details.</p>
+    </div>
         
     </div>
   )

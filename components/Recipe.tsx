@@ -59,7 +59,8 @@ export const RecipeBar = ({recipe}:{recipe:Recipe}) => {
         const favorite = setFavoriteRecipeInLocalStorage(recipe.id);
         setFavorite(favorite);
       }}/>}
-      <FontAwesomeIcon icon={faShare}/>
+      <FontAwesomeIcon icon={faShare}
+      onClick={()=>alert('soon :)')}/>
       <FontAwesomeIcon icon={faTrash} onClick={()=>{
         deleteRecipeFromLocalStorage(recipe.id);
         router.reload();

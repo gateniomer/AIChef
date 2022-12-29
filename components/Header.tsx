@@ -22,8 +22,8 @@ export const Header = () => {
         <h2><span style={{color:'var(--buttons)'}}>AI</span>Chef 🍳</h2>
         <NavMenu/>
         <ul className='social'>
-    <li><Link href={'https://www.linkedin.com/in/omer-gatenio/'}><FontAwesomeIcon icon={faLinkedin}/></Link></li>
     <li><Link href={'https://github.com/gateniomer/AIChef'}><FontAwesomeIcon icon={faGithub}/></Link></li>
+    <li><Link href={'https://www.linkedin.com/in/omer-gatenio/'}><FontAwesomeIcon icon={faLinkedin}/></Link></li>
     <li><Link href={'https://wa.me/+972544930243'}><FontAwesomeIcon icon={faWhatsapp}/></Link></li>
   </ul>
       </div>
